@@ -1,5 +1,3 @@
-# Assignment - 27.09.2021
-
 file = open ("F:\\Python\Input.txt", "r")
 f = file.read()
 c = f.split("\n") ## Reference - https://www.geeksforgeeks.org/count-number-of-lines-in-a-text-file-in-python/
