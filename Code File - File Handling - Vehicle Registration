@@ -1,0 +1,67 @@
+# Assignment - 27.09.2021
+
+file = open ("F:\\Python\Input.txt", "r")
+f = file.read()
+c = f.split("\n") ## Reference - https://www.geeksforgeeks.org/count-number-of-lines-in-a-text-file-in-python/
+n = len(c)
+
+s1 = ""
+n1 = 0
+
+file1 = open ("F:\\Python\Output.txt", "w")
+
+for i in range (0, n):
+    s1 = str(c[i])
+    n1 = len(c[i])
+    if n1 == 10:
+        if s1[0:2].isalpha():
+            if s1[2:4].isnumeric():
+                if s1[4:6].isalpha():
+                    if s1[6:10].isnumeric():
+                        if s1[0:2] == "TN":
+                            if s1[2:4] == "01":
+                                q = s1[4:6]
+                                w = s1[6:10]
+                                file1.write ("Tamil Nadu, Chennai, " + q + ", " + w + "\n")
+                            elif s1[2:4] == "02":
+                                q = s1[4:6]
+                                w = s1[6:10]
+                                file1.write ("Tamil Nadu, Kadaloor, " + q + ", " + w + "\n")
+                            elif s1[2:4] == "03":
+                                q = s1[4:6]
+                                w = s1[6:10]
+                                file1.write ("Tamil Nadu, Kovai, " + q + ", " + w + "\n")
+                            else:
+                                file1.write ("Unknown Registration\n")
+                        elif s1[0:2] == "AP":
+                            if s1[2:4] == "01":
+                                q = s1[4:6]
+                                w = s1[6:10]
+                                file1.write ("Andhra Pradesh, Nellore, " + q + ", " + w + "\n")
+                            elif s1[2:4] == "02":
+                                q = s1[4:6]
+                                w = s1[6:10]
+                                file1.write ("Andhra Pradesh, Krishna, " + q + ", " + w + "\n")
+                            elif s1[2:4] == "03":
+                                q = s1[4:6]
+                                w = s1[6:10]
+                                file1.write ("Andhra Pradesh, Kakkinada, " + q + ", " + w + "\n")
+                            else:
+                                file1.write ("Unknown Registration\n")
+                        else:
+                            file1.write ("Unknown Registration\n")
+
+                    else:
+                        file1.write ("Unknown Registration\n")
+                else:
+                    file1.write ("Unknown Registration\n")
+            else:
+                file1.write ("Unknown Registration\n")
+        else:
+            file1.write ("Unknown Registration\n")
+    else:
+        file1.write ("Unknown Registration\n")
+
+file1.close()
+
+file.close()
